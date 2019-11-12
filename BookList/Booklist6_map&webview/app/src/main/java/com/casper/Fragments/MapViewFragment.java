@@ -41,7 +41,7 @@ public class MapViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map_view, container, false);
-        mapView = (MapView) view.findViewById(R.id.bmapView);
+        mapView = view.findViewById(R.id.bmapView);
 
         BaiduMap baiduMap = mapView.getMap();
 
@@ -61,7 +61,7 @@ public class MapViewFragment extends Fragment {
         BitmapDescriptor bitmap = BitmapDescriptorFactory
                 .fromResource(R.raw.jnu);
         MarkerOptions markerOptions = new MarkerOptions().icon(bitmap).position(cenpt);
-        Marker marker = (Marker)baiduMap.addOverlay(markerOptions);
+        baiduMap.addOverlay(markerOptions);
 
         //添加文字
         OverlayOptions textOption = new TextOptions().bgColor(0xAAFFFF00).fontSize(50)
@@ -72,7 +72,7 @@ public class MapViewFragment extends Fragment {
         baiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                Toast.makeText(getContext(),"被点击！",Toast.LENGTH_SHORT);
+                Toast.makeText(getContext(),"被点击！",Toast.LENGTH_SHORT).show();
                 return false;
             }
         });

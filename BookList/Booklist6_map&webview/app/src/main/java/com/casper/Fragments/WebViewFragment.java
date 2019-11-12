@@ -1,7 +1,7 @@
 package com.casper.Fragments;
 
 
-import android.annotation.SuppressLint;
+//import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -30,7 +30,7 @@ public class WebViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_web_view, container, false);
-        WebView webView = (WebView)view.findViewById(R.id.web_view);
+        WebView webView = view.findViewById(R.id.web_view);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://news.sina.com.cn/");
